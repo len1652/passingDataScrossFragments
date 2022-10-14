@@ -36,7 +36,6 @@ public class FragmentStudentList extends ListFragment {
     @Override
     public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-
         truyenSv.DataStudent(arraySinhVien.get(position));
     }
 

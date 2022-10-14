@@ -24,6 +24,15 @@ public class fragmentStudentInfo extends Fragment{
         return view;
     }
 
+    public static fragmentStudentInfo getInstance(SinhVien sv)
+    {
+        fragmentStudentInfo frg=new fragmentStudentInfo();
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("data",sv);
+        frg.setArguments(bundle);
+        return new fragmentStudentInfo();
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -31,15 +40,17 @@ public class fragmentStudentInfo extends Fragment{
         txtNamSinh = view.findViewById(R.id.txtNsInfo);
         txtDiaChi = view.findViewById(R.id.txtDiaChiInfo);
         txtEmail = view.findViewById(R.id.txtMalInfo);
+       SinhVien data= (SinhVien) getArguments().getSerializable("data");
     }
 
-    public void SetInfo(SinhVien sv){
-        txtHoTen.setText(sv.getHoTen());
-        txtNamSinh.setText(String.valueOf(sv.getNamSinh()));
-        txtDiaChi.setText(sv.getDiaChi());
-        txtEmail.setText(sv.getEmail());
 
-//        Toast.makeText(getActivity(), txtHoTen.getText().toString(), Toast.LENGTH_SHORT).show();
-        Log.e("Name", sv.getHoTen());
-    }
+//    public void SetInfo(SinhVien sv){
+//        txtHoTen.setText(sv.getHoTen());
+//        txtNamSinh.setText(String.valueOf(sv.getNamSinh()));
+//        txtDiaChi.setText(sv.getDiaChi());
+//        txtEmail.setText(sv.getEmail());
+//
+////        Toast.makeText(getActivity(), txtHoTen.getText().toString(), Toast.LENGTH_SHORT).show();
+//        Log.e("Name", sv.getHoTen());
+//    }
 }

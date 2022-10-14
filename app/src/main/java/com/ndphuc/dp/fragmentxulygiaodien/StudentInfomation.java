@@ -1,6 +1,7 @@
 package com.ndphuc.dp.fragmentxulygiaodien;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,12 +17,10 @@ public class StudentInfomation extends AppCompatActivity {
         Intent intent = getIntent();
 
         SinhVien sinhVien = (SinhVien) intent.getSerializableExtra("thongTinSinhVien");
-
-        fragmentStudentInfo studentInfo = (fragmentStudentInfo)
-                getSupportFragmentManager().findFragmentById(R.id.fragmentChiTiet);
-
-        studentInfo.SetInfo(sinhVien);
-
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragmentChiTiet,fragmentStudentInfo.getInstance(sinhVien));
+//        fragmentStudentInfo studentInfo = (fragmentStudentInfo)
+//                getSupportFragmentManager().findFragmentById(R.id.fragmentChiTiet);
 
     }
 }
