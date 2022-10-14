@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent"
+    android:weightSum="10">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentlist"
+        android:name="com.ndphuc.dp.fragmentxulygiaodien.FragmentStudentList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="91dp"
+        android:layout_weight="4"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentInfo"
+        android:name="com.ndphuc.dp.fragmentxulygiaodien.fragmentStudentInfo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="57dp" />
+</LinearLayout>

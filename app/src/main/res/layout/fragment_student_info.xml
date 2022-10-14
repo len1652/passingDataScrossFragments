@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#005B67"
+    tools:context=".fragmentStudentInfo"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/txtNameInfo"
+        android:textColor="#ff00"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+    <TextView
+        android:id="@+id/txtNsInfo"
+        android:textColor="#0088FF"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Năm sinh: 2022" />
+    <TextView
+        android:id="@+id/txtDiaChiInfo"
+        android:textColor="#FFF200"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ: Hà Nội" />
+    <TextView
+        android:id="@+id/txtMalInfo"
+        android:textColor="#26FF00"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email: abc@gmail.com" />
+
+</LinearLayout>
