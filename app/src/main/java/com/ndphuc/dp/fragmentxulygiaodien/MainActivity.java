@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements ITruyenSinhVien{
+public class MainActivity extends AppCompatActivity implements ITruyenSinhVien {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +19,15 @@ public class MainActivity extends AppCompatActivity implements ITruyenSinhVien{
 
     @Override
     public void DataStudent(SinhVien sinhVien) {
-        fragmentStudentInfo fragmentStudentinfo= (fragmentStudentInfo)
+        fragmentStudentInfo fragmentStudentinfo = (fragmentStudentInfo)
                 getSupportFragmentManager().findFragmentById(R.id.fragmentInfo);
 
         Configuration configuration = getResources().getConfiguration();
-        if(fragmentStudentinfo!=null && configuration.orientation==Configuration.ORIENTATION_LANDSCAPE){
-
-        }else{
-            Intent intent = new Intent(MainActivity.this,StudentInfomation.class);
-            intent.putExtra("thongTinSinhVien",sinhVien);
+        if (fragmentStudentinfo != null && configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            fragmentStudentinfo.SetInfo(sinhVien);
+        } else {
+            Intent intent = new Intent(MainActivity.this, StudentInfomation.class);
+            intent.putExtra("thongTinSinhVien", sinhVien);
             startActivity(intent);
         }
     }

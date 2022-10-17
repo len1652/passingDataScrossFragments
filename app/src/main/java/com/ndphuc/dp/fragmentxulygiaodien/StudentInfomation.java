@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class StudentInfomation extends AppCompatActivity {
@@ -17,10 +18,9 @@ public class StudentInfomation extends AppCompatActivity {
         Intent intent = getIntent();
 
         SinhVien sinhVien = (SinhVien) intent.getSerializableExtra("thongTinSinhVien");
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.fragmentChiTiet,fragmentStudentInfo.getInstance(sinhVien));
-//        fragmentStudentInfo studentInfo = (fragmentStudentInfo)
-//                getSupportFragmentManager().findFragmentById(R.id.fragmentChiTiet);
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("data", sinhVien);
+        fragmentManager.beginTransaction().add(R.id.fragmentChiTiet, fragmentStudentInfo.class, bundle).commit();
     }
 }

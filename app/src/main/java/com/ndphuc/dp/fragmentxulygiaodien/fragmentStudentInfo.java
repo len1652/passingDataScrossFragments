@@ -14,23 +14,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class fragmentStudentInfo extends Fragment{
-    TextView txtHoTen,txtNamSinh,txtDiaChi,txtEmail;
+public class fragmentStudentInfo extends Fragment {
+    TextView txtHoTen, txtNamSinh, txtDiaChi, txtEmail;
     View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_student_info,container,false);
+        view = inflater.inflate(R.layout.fragment_student_info, container, false);
         return view;
-    }
-
-    public static fragmentStudentInfo getInstance(SinhVien sv)
-    {
-        fragmentStudentInfo frg=new fragmentStudentInfo();
-        Bundle bundle=new Bundle();
-        bundle.putSerializable("data",sv);
-        frg.setArguments(bundle);
-        return new fragmentStudentInfo();
     }
 
     @Override
@@ -40,17 +32,17 @@ public class fragmentStudentInfo extends Fragment{
         txtNamSinh = view.findViewById(R.id.txtNsInfo);
         txtDiaChi = view.findViewById(R.id.txtDiaChiInfo);
         txtEmail = view.findViewById(R.id.txtMalInfo);
-       SinhVien data= (SinhVien) getArguments().getSerializable("data");
+        if (getArguments() != null) {
+            SinhVien data = (SinhVien) getArguments().getSerializable("data");
+            SetInfo(data);
+        }
     }
 
 
-//    public void SetInfo(SinhVien sv){
-//        txtHoTen.setText(sv.getHoTen());
-//        txtNamSinh.setText(String.valueOf(sv.getNamSinh()));
-//        txtDiaChi.setText(sv.getDiaChi());
-//        txtEmail.setText(sv.getEmail());
-//
-////        Toast.makeText(getActivity(), txtHoTen.getText().toString(), Toast.LENGTH_SHORT).show();
-//        Log.e("Name", sv.getHoTen());
-//    }
+    public void SetInfo(SinhVien sv) {
+        txtHoTen.setText(sv.getHoTen());
+        txtNamSinh.setText(String.valueOf(sv.getNamSinh()));
+        txtDiaChi.setText(sv.getDiaChi());
+        txtEmail.setText(sv.getEmail());
+    }
 }
